@@ -1,0 +1,26 @@
+# action name 설정
+name: Deploy-main-tag
+# tag를 통해서 trigger하는 방법
+# inputs: 인풋 값이 저장된다.
+# required: true/false
+# type: data type
+on:
+  workflow_dispatch:
+    inputs:
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true
+        type: string
+# jobs을 정의
+jobs:
+  # job 정의
+  print-tag:
+    # 작업을 실행할 시스템 정의
+    runs-on: ubuntu-latest
+    # 작업을 실행할 조건 정의
+    if:  ${{ inputs.print_tags }}
+    # 프로세스 정의
+    steps:
+      # 프로세스-1 (example)
+      - name: Print the input tag to STDOUT
+        run: echo  The tags are ${{ inputs.print_tags }} in jobs
