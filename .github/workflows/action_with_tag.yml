@@ -25,18 +25,10 @@ on:
         type: environment
         required: true
 
-jobs1:
+jobs:
   print-tag:
     runs-on: ubuntu-latest
     if:  ${{ inputs.print_tags }}
     steps:
       - name: Print the input tag to STDOUT
         run: echo  The tags are ${{ inputs.tags }} in jobs1
-
-jobs2:
-  print-tag:
-    runs-on: ubuntu-latest
-    if:  ${{ inputs.print_tags }} == "3.9.0"
-    steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.tags }} in jobs2
