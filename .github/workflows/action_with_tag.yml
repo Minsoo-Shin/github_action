@@ -1,4 +1,4 @@
-name: Deploy-main_tag
+name: Deploy-main-tag
 
 on:
   workflow_dispatch:
